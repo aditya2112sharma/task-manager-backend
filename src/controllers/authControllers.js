@@ -30,8 +30,8 @@ async function handleRegister(req,res){
     })
     res.cookie("token",token,{
         httpOnly: true,
-        secure: false,
-        sameSite: 'lax',
+        secure: true,
+        sameSite: 'none',
     })
     return res.status(200).json({message: "user created"})
 }
@@ -52,8 +52,8 @@ async function handleLogin(req,res){
     })
     res.cookie("token",token,{
         httpOnly: true,
-        secure: false,
-        sameSite: 'lax',
+        secure: true,
+        sameSite: 'none',
     })
     return res.status(200).json({message: "Login successfully"})
 }
